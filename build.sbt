@@ -20,7 +20,7 @@ import Keys._
 import sbtassembly.AssemblyPlugin.autoImport._
 import com.typesafe.sbt.SbtGit.GitKeys.gitRemoteRepo
 
-val beamVersion = "2.2.0"
+val beamVersion = "2.3.0"
 
 val algebirdVersion = "0.13.3"
 val annoy4sVersion = "0.5.0"
@@ -67,8 +67,8 @@ val tensorFlowVersion = "1.3.0"
 val commonSettings = Sonatype.sonatypeSettings ++ assemblySettings ++ Seq(
   organization       := "com.spotify",
 
-  scalaVersion       := "2.12.4",
-  crossScalaVersions := Seq("2.11.12", "2.12.4"),
+  scalaVersion       := "2.11.12",
+  crossScalaVersions := Seq("2.11.12"),
   scalacOptions                   ++= {
     Seq("-Xmax-classfile-name", "100", "-target:jvm-1.8", "-deprecation", "-feature", "-unchecked") ++
       (if (scalaBinaryVersion.value == "2.12") Seq("-Ydelambdafy:inline") else Nil)
@@ -237,18 +237,18 @@ lazy val root: Project = Project(
   scioTest,
   scioAvro,
   scioBigQuery,
-  scioBigtable,
-  scioCassandra2,
-  scioCassandra3,
-  scioElasticsearch2,
-  scioElasticsearch5,
+  // scioBigtable,
+  // scioCassandra2,
+  // scioCassandra3,
+  // scioElasticsearch2,
+  // scioElasticsearch5,
   scioExtra,
   scioHdfs,
   scioJdbc,
-  scioParquet,
+  // scioParquet,
   scioTensorFlow,
   scioSchemas,
-  scioExamples,
+  // scioExamples,
   scioRepl,
   scioJmh
 )
